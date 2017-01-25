@@ -1,0 +1,5 @@
+<input type="text" placeholder="&#128272; Usuario" name="usuario">
+        <input type="password" placeholder="&#128272; Contraseña" name="clave">
+
+
+https://www.youtube.com/watch?v=TR9dJEkeCoM

@@ -1,0 +1,73 @@
+.banner { 
+    width: 700px; 
+    height: 300px;
+    border: 3px solid #10ADBE;
+    margin: auto;
+
+    
+    background-size: 100% 100%;
+    
+    animation: banner1 14s infinite;
+    
+    animation-direction: alternate;
+    
+}
+
+ @-webkit-keyframes banner1 { 
+
+    0%, 20%
+    {
+        background-image:  url(images/1.jpg); 
+        opacity: 1;
+    }
+    
+     21%, 24%{
+         
+         opacity: 0.1;
+     } 
+     
+    25%, 45%
+
+    {
+        background-image: url(images/2.jpg);    
+        opacity: 1;
+    }
+     
+     46% 49% { opacity: 0.1;
+         
+         
+     } 
+
+    50%, 70% 
+
+     {
+         background-image: url(images/3.jpg);
+         opacity: 1;
+         
+     }
+     71%, 79%
+     {
+         opacity: 0.1;
+         
+     }
+     80%, 100% {
+         background-image: url(images/4.jpg);
+         opacity: 1;
+     }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

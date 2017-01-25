@@ -1,0 +1,65 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> Formulario de Registro</title>
+    <link rel="stylesheet" href="estilo_ingreso_cosultas.css">
+</head>
+<body>
+ <br><h1> Registro de Consultas </h1> <br>
+<form method="post" class="form-register">
+    <h2 class="form__titulo"> Ingresar Datos de la Consulta </h2>
+    <div class="contenedor-inputs">
+    <!--<h3 class="input-30">Usuario</h3>
+    <input type="text" placeholder="Nombre de Usuario" name="txtusuario" class="input-70" required>
+    -->
+    
+    <h3 class="input-30">Número de Cédula del Paciente</h3>
+    <input type="search" placeholder="Ejemplo: 171515608-2" name="txtnumero" class="input-70" maxlength="11">
+    <h3 class="input-30">Fecha de Consulta</h3>    
+    <input type="date" placeholder="Fecha de Consulta" name="datfecha" class="especiales-70" required>
+     <h3 class="input-30">Hora de Consulta</h3>    
+    <select  name="hora_consulta" aria-disabled="true" class="especiales-70" required>
+        <option value="1">08:00-08:30</option>
+        <option value="2">08:30-09:00</option>
+        <option value="3">09:00_09:30</option>
+        <option value="4">09:30-10:00</option>
+        <option value="5">10:00-10:30</option>
+        <option value="6">10:30-11:00</option>
+        <option value="7">11:00-11:30</option> 
+        <option value="8">11:30-12:00</option> 
+        <option value="9">14:00-14:30</option>
+        <option value="10">14:30-15:00</option>         
+        <option value="11">15:00-15:30</option>
+        <option value="12">15:30-16:00</option>        
+   </select>  
+    <h3 class="input-30">Diagnóstico</h3>       
+    <input type="text" placeholder="Diagnóstico" name="txtdiagnostico" class="input-70" required>    
+    <h3 class="input-30">Precio de la Consulta</h3>       
+    <input type="text" placeholder="Precio de la consulta" name="txtprecio" class="input-70" required>
+    <h3 class="input-30">Conducta a Seguir</h3>
+    <textarea name="txtconductaseguir" rows="10" cols="40" class="input-100" placeholder="Conducta a seguir" required> </textarea> 
+        
+        
+    
+    <input type="submit" value="Registrar" class="btn-enviar" name="enviar">
+    
+    </div>
+</form>  
+
+<?php
+    
+    if(isset($_REQUEST['enviar'])){
+        include '/../consultas.php';
+        $consultas= new Consulta();
+        $consultas->registro_consulta($_REQUEST['datfecha'], $_REQUEST['hora_consulta'], $_REQUEST['txtdiagnostico'], $_REQUEST['txtprecio'], $_REQUEST['txtconductaseguir'], $_REQUEST['txtnumero']);    
+    }
+    
+?>    
+     
+         
+    
+</body>
+
+
+</html>
